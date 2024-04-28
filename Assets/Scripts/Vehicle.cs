@@ -1,37 +1,42 @@
-﻿public abstract class Vehicle
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class Vehicle
 {
-  public string Go();
+  public abstract void Go();
 }
 
 public class Car : Vehicle
 {
-  public override string Go()
+  public override void Go()
   {
-    console.WriteLine("VroomVroom");
+    Debug.Log("VroomVroom");
   }
 }
 
 public class Ship : Vehicle
 {
-  public override string Go()
+  public override void Go()
   {
-    console.WriteLine("DooDoo");
+    Debug.Log("DooDoo");
   }
 }
 
 public class Plane : Vehicle, IFly
 {
-  public override string Go()
+  public override void Go()
   {
-    console.WriteLine("Whoooooosh");
+    Debug.Log("Whoooooosh");
   }
-  public string Fly()
+  public void Fly()
   {
-    console.WriteLine("Flyyyyyyyyyy");
+    Debug.Log("Flyyyyyyyyyy");
   }
 }
 
 public interface IFly
 {
-  string Fly();
+  void Fly();
 }
